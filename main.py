@@ -36,7 +36,7 @@ def getColorPath(colorT, color):
 def main():
     pathFile = "pathes.txt"
     cellRoot = "img"
-    CELL_W = 40
+    CELL_W = 24
     CELL_H = CELL_W
     colorT = {}
     if os.path.exists(pathFile):
