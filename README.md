@@ -15,8 +15,9 @@
 
 如果更新了`img`目录，删除掉`pathes.txt`文件，再运行。
 
-> [图片主色调算法参考](https://github.com/ZeevG/python-dominant-image-colour)
+[图片主色调算法参考](https://github.com/ZeevG/python-dominant-image-colour)  
 
+---
 #### 生成效果
 源图片  
 ![](big.jpg)
