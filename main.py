@@ -60,7 +60,7 @@ def main():
     imgBig = Image.open(imgName)
     
     w, h = imgBig.size
-    imgHuge = Image.new( "RGB", (w * CELL_W, h * CELL_W))
+    imgHuge = Image.new( "RGBA", (w * CELL_W, h * CELL_W), (255, 255, 255, 255))
     for i in xrange(0, w):
         for j in xrange(0, h):
             color = imgBig.getpixel((i, j))
@@ -68,7 +68,7 @@ def main():
             cellImage = Image.open(path).resize((CELL_W, CELL_H))
             imgHuge.paste(cellImage, (i * CELL_W, j * CELL_H))
             print("\rpaste img: %d%%\t\t" % ((i * h + j + 1) * 100 / w / h)),
-    imgHuge.save(imgName[:-4] + "-big.jpg", "JPEG")
+    imgHuge.save(imgName[:-4] + "-big.png", "PNG")
     
 if __name__=="__main__":
     main()
