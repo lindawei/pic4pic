@@ -20,4 +20,4 @@
 ![](big.jpg)
 
 使用800个小图作为数据后，生成的效果：  
-![](bigbig.jpg)
+![](bigout.jpg)
