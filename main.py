@@ -1,6 +1,7 @@
 #coding=utf-8
 from PIL import Image
 import os
+import sys
        
 def average_colour(image):
 
@@ -53,8 +54,10 @@ def main():
         print("")
         open(pathFile, "w").write(str(colorT))
   
-    
-    imgBig = Image.open("big.jpg")
+    imgName = "big.jpg"
+    if len(sys.argv) >= 2:
+        imgName = sys.argv[1]
+    imgBig = Image.open(imgName)
     
     w, h = imgBig.size
     imgHuge = Image.new( "RGB", (w * CELL_W, h * CELL_W))
@@ -65,7 +68,7 @@ def main():
             cellImage = Image.open(path).resize((CELL_W, CELL_H))
             imgHuge.paste(cellImage, (i * CELL_W, j * CELL_H))
             print("\rpaste img: %d%%\t\t" % ((i * h + j + 1) * 100 / w / h)),
-    imgHuge.save("bigbig.jpg", "JPEG")
+    imgHuge.save(imgName[:-4] + "-big.jpg", "JPEG")
     
 if __name__=="__main__":
     main()
