@@ -1,7 +1,6 @@
 #coding=utf-8
-from PIL import Image, ImageDraw
+from PIL import Image
 import os
-import colorsys
        
 def average_colour(image):
 
